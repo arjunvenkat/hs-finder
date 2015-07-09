@@ -191,6 +191,10 @@ p {
   font-size: 1em;
 }
 
+.step-content {
+  vertical-align: middle;
+}
+
 /*.panel-body {
   box-shadow: 0 0 3px black;
 }*/
