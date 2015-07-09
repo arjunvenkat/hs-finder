@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>High School Finder</title>
+  <link rel="stylesheet" href="bootstrap.min.css">
+  <script src="jquery.min.js"></script>
+  <script src="bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.4.2/chosen.jquery.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.4.2/chosen.min.css">
+  <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="stylesheets/application.css">
+  <script src="https://maps.googleapis.com/maps/api/js"></script>
+  <script>
+      function initialize() {
+        var mapCanvas = document.getElementById('map-canvas');
+
+        var mapOptions = {
+          scrollwheel: false,
+          center: new google.maps.LatLng(41.8369, -87.6847),
+          zoom: 11,
+          mapTypeId: google.maps.MapTypeId.ROADMAP
+        }
+        map = new google.maps.Map(mapCanvas, mapOptions)
+
+        var myLatlng = new google.maps.LatLng(41.903209, -87.637725);
+        var marker = new google.maps.Marker({
+            position: myLatlng,
+            title:"Walter Payton",
+            map: map
+        });
+
+        var myLatlng = new google.maps.LatLng(41.878266, -87.663704);
+        var marker = new google.maps.Marker({
+            position: myLatlng,
+            title:"Whitney Young",
+            map: map
+        });
+
+        var myLatlng = new google.maps.LatLng(41.874376, -87.630086);
+        var marker = new google.maps.Marker({
+            position: myLatlng,
+            title:"Jones",
+            map: map
+        });
+        // var contentString = '<h3 id="firstHeading" class="firstHeading"><a href="#">Jones College Prep</a></h3>';
+        // var infowindow = new google.maps.InfoWindow({
+        //      content: contentString
+        //  });
+        // google.maps.event.addListener(marker, 'click', function() {
+        //     infowindow.open(map,marker);
+        //   });
+
+        var myLatlng = new google.maps.LatLng(41.813873, -87.60296);
+        var marker2 = new google.maps.Marker({
+            position: myLatlng,
+            title:"King",
+            map: map
+        });
+        // var contentString = '<h3 id="firstHeading" class="firstHeading"><a href="#">King College Prep</a></h3>';
+        // var infowindow = new google.maps.InfoWindow({
+        //      content: contentString
+        //  });
+        // google.maps.event.addListener(marker2, 'click', function() {
+        //     infowindow.open(map,marker2);
+        //   });
+
+
+      }
+      google.maps.event.addDomListener(window, 'load', initialize);
+    </script>
+</head>
+<body>
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">High School Finder</a>
+    </div>
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="about.html">About high schools</a></li>
+        <li><a href="list.html">Explore high schools</a></li>
+        <li><a href="how_to_apply.html">How to apply</a></li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h1>Explore schools</h1>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-4">
+        <div class="panel panel-default">
+          <div class="panel-body">
+              <h2>Refine your search</h2>
+              <hr>
+              <ol class="filter-options">
+                <li>
+                  <h4>Enter your address</h4>
+                  <div class="form-group">
+                    <label for="address" class="sr-only">address</label>
+                    <input type="text" class="form-control" id="address" placeholder="5110 N Damen Ave, Chicago, IL 60625">
+                  </div>
+                  <div>Find schools within:</div>
+                  <div><strong class="distance-value">10</strong> miles of my address</div>
+                  <input class="distance-range" type="range" min="1" max="20" step="1" />
+                </li>
+                <li>
+                  <h4>Choose a sort order</h4>
+                  <select class="form-control">
+                    <option>College enrollment</option>
+                    <option>Freshman on-track percentage</option>
+                    <option>ACT score</option>
+                    <option>Graduation rate</option>
+                  </select>
+                </li>
+                <li>
+                  <h4>Enter your 7th grade scores <small>(optional)</small></h4>
+                  <div>to see what schools you're eligible for. If you're not in 7th grade yet, use the scores you expect to get.</div>
+                  <h6 class="filter-control">
+                    <span></span>
+                    Show form
+                  </h6>
+                  <div class="filter-container scores">
+                    <div class="form-group">
+                      <label for="nwea-math">NWEA Math</label>
+                      <input type="text" class="form-control" id="nwea-math" placeholder="76">
+                    </div>
+                    <div class="form-group">
+                      <label for="nwea-reading">NWEA Reading</label>
+                      <input type="text" class="form-control" id="nwea-reading" placeholder="85">
+                    </div>
+                    <div class="form-group">
+                      <label for="math">Math letter grade</label>
+                      <input type="text" class="form-control" id="math" placeholder="B">
+                    </div>
+                    <div class="form-group">
+                      <label for="reading">Reading letter grade</label>
+                      <input type="text" class="form-control" id="reading" placeholder="B">
+                    </div>
+                    <div class="form-group">
+                      <label for="science">Science letter grade</label>
+                      <input type="text" class="form-control" id="science" placeholder="B">
+                    </div>
+                    <div class="form-group">
+                      <label for="social-studies">Social studies letter grade</label>
+                      <input type="text" class="form-control" id="social-studies" placeholder="B">
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <h4>Add more filters</h4>
+                  <h6 class="filter-control">
+                    <span></span>
+                    Available programs
+                  </h6>
+                  <div class="filter-container">
+                    <div class="checkbox">
+                      <label>
+                        <input type="checkbox" value="">
+                        Selective
+                      </label>
+                    </div>
+                    <div class="checkbox">
+                      <label>
+                        <input type="checkbox" value="">
+                        Military
+                      </label>
+                    </div>
+                    <div class="checkbox">
+                      <label>
+                        <input type="checkbox" value="">
+                        Charter
+                      </label>
+                    </div>
+                    <div class="checkbox">
+                      <label>
+                        <input type="checkbox" value="">
+                        Neighborhood
+                      </label>
+                    </div>
+                    <div class="checkbox">
+                      <label>
+                        <input type="checkbox" value="">
+                        IB
+                      </label>
+                    </div>
+                    <div class="checkbox">
+                      <label>
+                        <input type="checkbox" value="">
+                        STEM
+                      </label>
+                    </div>
+                  </div>
+
+                  <h6 class="filter-control">
+                    <span></span>
+                    School data
+                  </h6>
+                  <div class="filter-container">
+                    <div class="form-group">
+                      <label for="freshmen-on-track"><strong>Freshmen on-track</strong></label>
+                      <div>Minimum:
+                        <strong>
+                          <span class="freshmen-on-track-value">60</span>%</strong>
+                      </div>
+                      <input id="freshmen-on-track" class="freshmen-on-track-range" type="range" min="10" max="100" step="10" />
+                    </div>
+                    <div class="form-group">
+                      <label for="college-attainment"><strong>College attainment</strong></label>
+                      <div>Minimum:
+                        <strong>
+                          <span class="college-attainment-value">60</span>%
+                        </strong>
+                      </div>
+                      <input class="college-attainment-range" id='college-attainment' type="range" min="10" max="100" step="10" />
+                    </div>
+                    <div class="form-group">
+                      <label for="attendance"><strong>Attendance</strong></label>
+                      <div >Minimum:
+                        <strong>
+                          <span class="attendance-value">60</span>%
+                        </strong>
+                      </div>
+                      <input id='attendance' class="attendance-range" type="range" min="10" max="100" step="10" />
+                    </div>
+                    <div class="form-group">
+                      <label for="graduation-rate"><strong>Graduation rate</strong></label>
+                      <div >Minimum:
+                        <strong>
+                          <span class="graduation-rate-value">60</span>%
+                        </strong>
+                      </div>
+                      <input id='graduation-rate' class="graduation-rate-range" type="range" min="10" max="100" step="10" />
+                    </div>
+                    <div class="form-group">
+                      <label for="school-environment"><strong>School environment</strong></label>
+                      <div >Minimum:
+                        <strong>
+                          <span class="school-environment-value">good</span>
+                        </strong>
+                      </div>
+                      <input id='school-environment' class="school-environment-range" type="range" min="1" max="5" step="1" />
+                    </div>
+                  </div>
+
+                  <h6 class="filter-align">
+                    Student interests
+                  </h6>
+                  <div class="filter-align">
+                    <div class="form-group">
+                      <select class="interests" data-placeholder="Choose a Country..." style="width:100%;" multiple="" tabindex="3">
+                        <option value=''>Academic Decathlon</option>
+                        <option value=''>Art Club</option>
+                        <option value=''>Band</option>
+                        <option value=''>Chorus</option>
+                        <option value=''>Debate</option>
+                        <option value=''>Drama</option>
+                        <option value=''>Environment</option>
+                        <option value=''>Ethnic Clubs</option>
+                        <option value=''>Guitar Club</option>
+                        <option value=''>Math Team</option>
+                        <option value=''>Spoken Word Poetry</option>
+                        <option value=''>Baseball</option>
+                        <option value=''>Basketball</option>
+                        <option value=''>Bowling</option>
+                        <option value=''>Cheerleading</option>
+                        <option value=''>Cross country</option>
+                        <option value=''>Dance Team</option>
+                        <option value=''>Football</option>
+                        <option value=''>Golf</option>
+                        <option value=''>Soccer</option>
+                        <option value=''>Softball</option>
+                        <option value=''>Swimming</option>
+                        <option value=''>Track & Field</option>
+                        <option value=''>Volleyball</option>
+                        <option value=''>Water Polo</option>
+                        <option value=''>Wrestling</option>
+                      </select>
+                    </div>
+                  </div>
+                </li>
+              </ol>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-8">
+        <ul class="nav nav-tabs">
+          <li role="presentation"><a href="list.html">List view</a></li>
+          <li role="presentation" class="active"><a href="map.html">Map view</a></li>
+        </ul>
+        <div class="row">
+          <div class="col-md-8">
+            <div id="map-canvas"></div>
+          </div>
+          <div class="col-md-4">
+            <div class="map-list-label">Click on a school to center it on the map.</div>
+            <div class="list-group school-map-list">
+              <a href="#" data-lat="41.903209" data-lng="-87.637725"  class="list-group-item">Walter Payton</a>
+              <a href="#" data-lat="41.878266" data-lng="-87.663704" class="list-group-item">Whitney Young</a>
+              <a href="#" data-lat="41.874376" data-lng="-87.630086" class="list-group-item">Jones</a>
+              <a href="#" data-lat="41.813873" data-lng="-87.60296" class="list-group-item">King</a>
+            </div>
+            <a class="reset-map" href="#">reset map</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer></footer>
+  <script>
+    $('.interests').chosen();
+    $('.filter-control').click(function(){
+      $(this).next('.filter-container').toggle();
+      $(this).toggleClass('open');
+    });
+
+    $('.school-map-list a').click(function(event){
+      event.preventDefault();
+      lat = $(this).data('lat')
+      lng = $(this).data('lng')
+      var latlng = new google.maps.LatLng(lat, lng);
+      map.setCenter(latlng);
+      map.setZoom(12);
+      // alert($(this).data('lat'));
+    });
+
+    $('.reset-map').click(function(event){
+      event.preventDefault();
+      var myLatlng = new google.maps.LatLng(41.8369, -87.6847);
+      map.setZoom(11);
+      map.setCenter(myLatlng);
+    });
+
+    $('.distance-range').on('input', function(){
+      var value = $(this).val();
+      $('.distance-value').html(value);
+    });
+
+    $('.freshmen-on-track-range').on('input', function(){
+      var value = $(this).val();
+      $('.freshmen-on-track-value').html(value);
+    });
+
+    $('.college-attainment-range').on('input', function(){
+      var value = $(this).val();
+      $('.college-attainment-value').html(value);
+    });
+
+    $('.attendance-range').on('input', function(){
+      var value = $(this).val();
+      $('.attendance-value').html(value);
+    });
+
+    $('.graduation-rate-range').on('input', function(){
+      var value = $(this).val();
+      $('.graduation-rate-value').html(value);
+    });
+
+    $('.school-environment-range').on('input', function(){
+      var value = $(this).val();
+      var displayValue;
+      if(value == 1) {
+        displayValue = "very poor"
+      } else if(value == 2) {
+        displayValue = "poor"
+      } else if(value == 3) {
+        displayValue = "average"
+      } else if(value == 4) {
+        displayValue = "good"
+      } else if(value == 5) {
+        displayValue = "excellent"
+      }
+      console.log(displayValue);
+      $('.school-environment-value').html(displayValue);
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,192 @@
+h1 {
+/*  font-size: 48px;
+  margin-bottom: 24px;*/
+}
+
+.navbar {
+  margin-bottom: 0;
+}
+.filter-options {
+  padding-left: 25px;
+}
+.filter-control {
+  cursor: default;
+}
+.filter-control span {
+  display: inline-block;
+  border-top: 6px solid gray;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  margin-bottom: 2px;
+
+  -webkit-transition: all 100ms ease;
+  -moz-transition: all 100ms ease;
+  -o-transition: all 100ms ease;
+  transition: all 100ms ease;
+
+  -webkit-transform: rotate(-90deg);
+  -moz-transform: rotate(-90deg);
+  -ms-transform: rotate(-90deg);
+  -o-transform: rotate(-90deg);
+}
+
+.profile .filter-control span {
+  border-top: 8px solid gray;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  margin-bottom: 4px;
+}
+
+.open span {
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -ms-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+}
+
+.filter-container {
+  padding-left: 20px;
+  display: none;
+}
+
+.filter-align {
+  padding-left: 15px;
+}
+.scores input {
+  width: 30%;
+}
+
+.panel h2 {
+  font-size: 28px;
+}
+.chosen-container {
+  border-radius: 4px;
+}
+
+.nav.nav-tabs {
+  margin-bottom: 20px;
+}
+.media-list li {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid lightgray;
+}
+
+.map-list-label {
+  font-weight: bold;
+  margin-bottom: 14px;
+}
+
+#map-canvas {
+  width: 100%;
+  height: 400px;
+  background-color: #CCC;
+}
+
+.jumbotron {
+  margin-top: -20px;
+}
+
+.jumbotron h1 {
+  margin-bottom: 0;
+}
+.jumbotron h2 {
+  margin-top: 10px;
+  margin-bottom: 32px;
+}
+
+.spacer {
+  margin-top: 18px;
+}
+
+.profile-desc {
+  font-size: 18px;
+}
+
+.stat-panel {
+  height: 150px;
+}
+
+.main-stat {
+  /*font-size: 108px;*/
+  font-size: 48px;
+}
+
+.main-stat-desc {
+  /*font-size: 32px;*/
+  font-size: 14px;
+}
+
+h2.stat-heading {
+  font-size: 32px;
+}
+
+h3.stat-heading {
+  font-size: 18px;
+  font-weight: normal;
+}
+
+.sub-stat {
+  font-size: 32px;
+}
+
+.school-map-list {
+  margin-bottom: 10px;
+}
+
+footer {
+  padding-top: 20px;
+  padding-bottom: 200px;
+}
+
+
+/** {
+  font-family: 'Roboto';
+}*/
+
+.home-bg {
+  /*background-image: url("http://tiviseries.mobi/wp-content/uploads/arrested-development-tobias-funke-images-3.jpg");*/
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../imgs/high_school.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%;
+}
+
+html, body {
+  height:100%;
+}
+
+#app-title {
+  padding-top: 300px;
+  color: white;
+  /*text-shadow: 0 0 2px black;*/
+  text-align:right;
+}
+
+#app-title h1 {
+  font-size: 6vw;
+}
+
+p {
+  color: #666666;
+  font-size: 1.3em;
+}
+
+.circle {
+  /*position: relative;*/
+  border: 2px solid black;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  font-size: 2em;
+  line-height: 46px;
+  text-align: center;
+}
+
+.apply-school p, .about-school p {
+  font-size: 1em;
+}
+
+/*.panel-body {
+  box-shadow: 0 0 3px black;
+}*/
