@@ -57,7 +57,12 @@ h1 {
 }
 
 .panel h2 {
-  font-size: 28px;
+  margin-top: 0.2em;
+  font-size: 24px;
+}
+
+.panel h3 {
+  font-size: 18px;
 }
 .chosen-container {
   border-radius: 4px;
@@ -140,7 +145,7 @@ h3.stat-heading {
 
 footer {
   padding-top: 20px;
-  padding-bottom: 200px;
+  padding-bottom: 40px;
 }
 
 
@@ -187,8 +192,12 @@ p {
   text-align: center;
 }
 
-.apply-school p, .about-school p {
+.apply-school p, .about-school p, .school-data p {
   font-size: 1em;
+}
+
+.apply-school h2, .about-school h2, .school-data h2 {
+  /*font-size: 1em;*/
 }
 
 .step-content {
